@@ -20,6 +20,9 @@ type Table = {
 
 function setTheTable(): Table {
   // 👉 FIXME ❌
+  //return {seats:[]};
+
+  //💪FIXED ✅
   return {
     seats: [
       { drink: { type: "Tea", poured: true } },

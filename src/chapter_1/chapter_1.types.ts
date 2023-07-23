@@ -3,7 +3,7 @@ export const HOLES = [
   "Fox",
   "Swiss Cheese",
   "Donut",
-  "Rabbit",
+  "Rabbit", //💪FIXED ✅
 ] as const; // 👉 FIXME ❌
 
 // ⚠️ It can be very useful to make a custom type based on the contents of an array
