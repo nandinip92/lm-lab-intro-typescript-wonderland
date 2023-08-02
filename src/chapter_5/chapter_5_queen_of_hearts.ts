@@ -17,7 +17,13 @@ export function meetTheQueen(): void {
   let guilty: boolean = false;
 
   //let witnesses: Witness[] = []; // 👉 FIXME ❌ - call getWitnesses here
-  let witnesses: Witness[] = getWitnesses(); //💪 FIXED ✅
+  const witnessNames = [
+    "The Mad Hatter",
+    "The March Hare",
+    "The Cheshire Cat",
+    "The White Rabbit",
+  ];
+  let witnesses: Witness[] = getWitnesses(witnessNames); //💪 FIXED ✅
 
   if (!witnesses || witnesses.length === 0) {
     print(`No witnesses have come forward to defend you.`);
@@ -51,12 +57,9 @@ function getWitnesses(): any {
 }
 */
 //💪FIXED ✅
-function getWitnesses(): Witness[] {
+function getWitnesses(witnessNames: string[]): Witness[] {
   //return [{ name: "Sammy", giveEvidence: giveEvidence() }];
-  return [
-    { name: "Sammy", giveEvidence: () => VERDICTS[1] },
-    { name: "Henry", giveEvidence: () => VERDICTS[1] },
-    { name: "Beth", giveEvidence: () => VERDICTS[1] },
-    { name: "Tim", giveEvidence: () => VERDICTS[1] },
-  ];
+  return witnessNames.map((n) => {
+    return { name: n, giveEvidence: () => VERDICTS[1] };
+  });
 }

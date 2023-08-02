@@ -18,19 +18,22 @@ type Table = {
   seats: Array<Seat>;
 };
 
+const table: Table = { seats: [] };
+
 function setTheTable(): Table {
   // 👉 FIXME ❌
   //return {seats:[]};
 
   //💪FIXED ✅
-  return {
-    seats: [
-      { drink: { type: "Tea", poured: true } },
-      { drink: { type: "Tea", poured: true } },
-      { drink: { type: "Tea", poured: true } },
-      { drink: { type: "Tea", poured: true } },
-    ],
-  };
+  for (let i = 0; i < 4; i++) {
+    table.seats.push({
+      drink: {
+        type: "Tea",
+        poured: true,
+      },
+    });
+  }
+  return table;
 }
 
 export function attendATeaParty() {

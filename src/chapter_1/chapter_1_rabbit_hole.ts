@@ -37,7 +37,6 @@ function chooseHole(input: string) {
 export function enterHole(hole: Hole): void {
   clear(true);
 
-  // @ts-ignore 👉 FIXME ❌
   //💪FIXED ✅
   if (hole === "Rabbit") {
     return meetTheCheshireCat();

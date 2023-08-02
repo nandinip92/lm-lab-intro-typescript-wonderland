@@ -22,9 +22,7 @@ type Mallet = Flamingo | Hammer | CroquetMallet;
 
 // 👉 FIXME ❌ We're defining a TBall and a TMallet, but not specifying anything about them...
 //💪FIXED ✅
-type TBall = Ball;
-type TMallet = Mallet;
-interface Croquet<TBall, TMallet> {
+interface Croquet<TBall extends Ball, TMallet extends Mallet> {
   hit: (ball: TBall, mallet: TMallet) => boolean;
 }
 
@@ -35,7 +33,7 @@ export function playCroquet(): void {
   // 👉 FIXME ❌ Our ball and mallet are made of numbers.
   //const game: Croquet<number, number> = {
   //💪FIXED ✅
-  const game: Croquet<string, string> = {
+  const game: Croquet<Ball, Mallet> = {
     hit: (ball, mallet) => {
       let score = 0;
 
